@@ -1,35 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="mainApp">
 	<head>
 		<meta charset="utf-8">
 		<title>AG Index</title>
-		<script src="node_modules/angular/angular.js"></script>
-		<link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<link href="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css" rel="stylesheet">
 		<link href="app/css/styles.css" rel="stylesheet">
+		<link href="app/css/footer.css" rel="stylesheet">
+		<script src="app/js/jquery-3.0.0.min.js"></script>
+		<script src="node_modules/angular/angular.js"></script>
 		<script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
-		<script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
-		<script src="node_modules/jquery/dist/jquery.min.js"></script>
+		
+		<link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css">
+		<link rel="stylesheet" href="bower_components/slick-carousel/slick/slick-theme.css">
+		<script src="bower_components/slick-carousel/slick/slick.js"></script>
+		<script src="bower_components/angular-slick/dist/slick.js"></script>
+		
 	</head>
 	<body>
-		<nav class="navbar navbar-default navbar-fixed-top">  
-			<div class="container-fluid"> <div class="navbar-header"> 
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" aria-expanded="false"> 
+		<nav class="navbar navbar-default navbar-fixed-top" ng-controller="navCtrl">  
+			<div class="container-fluid"> 
+				<div class="navbar-header"> 
+				<button type="button" class="navbar-toggle collapsed" ng-click="toggleMobileNav($event)"> 
 					<span class="sr-only">Toggle navigation</span> 
 					<span class="icon-bar"></span> 
 					<span class="icon-bar"></span> <span class="icon-bar"></span> 
 				</button> 
-				<a class="navbar-brand" href="#">Brand</a> 
+				<a class="navbar-brand" href="#"><img src="templates/icon.png"></a> 
+				<a href="" class="loginBtn" ng-click="toggleClassLogin($event)">SignIn/SignUp</a>
 				</div> 
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6"> 
+				<div class="collapse navbar-collapse" id="navbarCollapse"> 
 					<ul class="nav navbar-nav"> 
-						<li class="active"><a href="#">Home</a></li> 
-						<li><a href="#">ABOUT US</a></li> 
-						<li><a href="#">COURSE</a></li> 
-						<li><a href="">CONTACT US</a></li>
+						<li class="right" ng-click="toggleClassActive($event)"><a href="#">Home</a></li> 
+						<li class="right" ng-click="toggleClassActive($event)"><a href="#/AboutUs">ABOUT US</a></li> 
+						<li class="right" ng-click="toggleClassActive($event)"><a href="#">COURSE</a></li> 
+						<li ng-click="toggleClassActive($event)"><a href="">CONTACT US</a></li>
 					</ul> 
 				</div> 
 			</div> 
 		</nav>
+		<div class="pageWrapper">
+			
+			<div ui-view></div>
+		</div>
+		<footer class="footer">
+			<div class="container"></div>
+		</footer>
+		<div class="hideLogin close" ng-controller="loginCtrl">
+			<ng-include src="tmplUrl"></ng-include>
+		</div>
+		<!-- Scripts -->
+		<script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+		<script src="app/app.js"></script>
+		<script src="app/controller/navCtrl.js"></script>
+		<script src="app/controller/mainCtrl.js"></script>
+		<script src="app/controller/aboutUsCtrl.js"></script>
+		<script src="app/controller/loginCtrl.js"></script>
+		
 	</body>
 </html>

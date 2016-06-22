@@ -1,5 +1,193 @@
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+}
+.navbar-header{
+	width: 20%;
+}
 nav ul li{
-	width: 110px;
+	width: 125px;
 	height: 63px;
-	
+}
+nav div ul{
+	float: right !important;
+	margin-right: -15px !important;
+}
+nav div ul li.active a{
+	height: 100%;
+}
+.navbar:after{
+	clear: both;
+}
+.navbar-brand{
+	padding: 0;
+}
+.banner{
+	clear: both;
+	max-height: 900px;
+	overflow: hidden;
+}
+.slick-slide img {
+    height: 400px;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{				color: #fff;
+    background-color: rgba(41, 28, 152, 0.38);
+    font-weight: bold;
+	border-bottom: 3px solid;
+}
+.showNav{
+	display: inline-block;
+    float: right;
+    background: white;
+}
+nav ul li.active:after{
+	padding: 0;
+}
+nav ul li:after {
+  display:block;
+  content: '';
+  border-bottom: solid 3px #019fb6;  
+  transform: scaleX(0.0001);  
+  transition: transform 250ms ease-in-out;
+  padding: 5px;
+}
+nav ul li:hover:after { transform: scaleX(1); }
+nav ul li.right{
+	border-right: 1px solid #fff;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover .right{
+	border-right: 1px solid trasparent;
+}
+.row{
+	margin: 0;
+}
+.threeCol .row .col-sm-4{
+	height: 200px;
+}
+.leftCol{
+	background-color: #0085cb;
+}
+.middleCol{
+	background-color: #037399;
+}
+.rightCol{
+	background-color: #002945;
+}
+.clr{
+	clear: both;
+}
+.close{
+	display: none !important;
+}
+.pageWrapper{
+	min-height: 100%;
+}
+.slick-slider{
+	margin-bottom: 0!important;
+}
+.mainContent{
+	margin: 2% 5%;
+}
+.mainContent .row div.col-sm-3{
+	padding: 0;
+	margin-right: 4%
+}
+.txtImg{
+	background-color: #e1e1e1;
+    min-height: 400px;
+}
+.divider{
+	background: url(Rectangle-3.png);
+	background-repeat: no-repeat;
+	height: 296px;
+	margin: 7% 0;
+}
+.col-lg-6.loginLeft {
+    border-right: 1px solid brown;
+}
+.loginBtn{
+    display: block;
+    float: left;
+    margin-top: 7%;
+    background-color: blue;
+    color: white;
+    padding: 3%;
+    border-radius: 7%;
+    text-decoration: none;
+}
+.col-lg-6 h3 {
+    text-align: center;
+    margin-bottom: 5%;
+    border-bottom: 1px solid;
+    padding-bottom: 11px;
+}
+.hideLogin{
+	display: block;
+    position: absolute;
+    top: 7%;
+    left: 50px;
+    background-color: #fff;
+    width: 60%;
+    padding: 2%;
+    margin: 1%;
+    padding-left: 6%;
+}
+.hideLogin:after,
+.hideLogin:before{
+	bottom: 100%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+}
+.hideLogin:after {
+        border-color: rgba(255, 255, 255, 0);
+        border-bottom-color: #ffffff;
+        border-width: 19px;
+        left: 5%;
+        margin-left: -19px;
+}
+.hideLogin:before {
+	border-color: rgba(113, 158, 206, 0);
+	border-bottom-color: #719ECE;
+	border-width: 20px;
+	left: 5%;
+	margin-left: -20px;
+}
+.cntLeft{
+	margin: 8% 2%;
+	height: 300px;;
+}
+
+.form-group label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+    min-width: 22%;
+}
+.form-inline .form-group {
+    display: block;
+    margin-bottom: 5px;
+    vertical-align: middle;
+}
+.form-group button.btn.btn-success {
+    margin-left: 24%;
+    width: 100px;
+}
+/**************Media Queries**************/
+/*Mobile both portrait & landspace*/
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+	.divider{
+		display: none;
+	}
+  .mainContent .row .col-sm-3{
+	  text-align: center;
+  }
 }
