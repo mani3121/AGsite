@@ -1,9 +1,33 @@
+nav, .pageWrapper{
+	margin: 0 7%;
+}
+a.loginBtn, a.loginBtn:hover {
+    color: #fff;
+    text-decoration: none;
+}
+a.leftArrow img, a.rightArrow img{
+	width:10%;
+}
+a.leftArrow, a.rightArrow {
+	position: absolute;
+	top: 44%;
+}
+a.leftArrow{left: 0;}
+a.rightArrow{right: 0;    text-align: right;}
+.topNavLogo{
+	position: absolute;
+    top: 18%;
+    left: 46%;
+}
+a{
+	text-decoration: none;
+}
 .navbar-default {
     background-color: transparent;
     border-color: transparent;
 }
 .navbar-header{
-	width: 20%;
+	min-width: 20%;
 }
 nav ul li{
 	width: 125px;
@@ -23,9 +47,20 @@ nav div ul li.active a{
 	padding: 0;
 }
 .banner{
+	position: relative;
 	clear: both;
 	max-height: 900px;
 	overflow: hidden;
+}
+a.signUp{
+	text-decoration: none;
+	padding: 7%;
+	color: #fff;
+}
+a.signUp:hover{
+	text-decoration: none;
+	background-color: blueviolet;
+	
 }
 .slick-slide img {
     height: 400px;
@@ -36,7 +71,7 @@ nav div ul li.active a{
 	border-bottom: 3px solid;
 }
 .showNav{
-	display: inline-block;
+	display: inline-block !important;
     float: right;
     background: white;
 }
@@ -61,8 +96,9 @@ nav ul li.right{
 .row{
 	margin: 0;
 }
-.threeCol .row .col-sm-4{
-	height: 200px;
+.threeCol,.threeCol .col-md-4{
+	height: 200px !important;
+	border: 0.1px solid #fff;
 }
 .leftCol{
 	background-color: #0085cb;
@@ -88,9 +124,14 @@ nav ul li.right{
 .mainContent{
 	margin: 2% 5%;
 }
-.mainContent .row div.col-sm-3{
+.mainContent .row div.col-md-3{
 	padding: 0;
-	margin-right: 4%
+	margin-right: 4%;
+}
+.txtImg h3{
+	   text-align: center;
+    color: #e0231a;
+    font-weight: bolder;
 }
 .txtImg{
 	background-color: #e1e1e1;
@@ -101,19 +142,25 @@ nav ul li.right{
 	background-repeat: no-repeat;
 	height: 296px;
 	margin: 7% 0;
+	background-position-x: -10px;
 }
 .col-lg-6.loginLeft {
     border-right: 1px solid brown;
 }
-.loginBtn{
-    display: block;
-    float: left;
-    margin-top: 7%;
-    background-color: blue;
-    color: white;
-    padding: 3%;
-    border-radius: 7%;
-    text-decoration: none;
+.jumbContainer .container{
+	width: 100%;
+	margin-bottom: 10%;
+}
+.container .jumbotron{
+	min-height: 350px;
+}
+
+.jumbContainer .container .row .col-md-5{
+	text-align: right;
+}
+.jumbContainer .container .row .col-md-5 img{
+	padding: 5%;
+	background-color: #fff;
 }
 .col-lg-6 h3 {
     text-align: center;
@@ -132,23 +179,6 @@ nav ul li.right{
     margin: 1%;
     padding-left: 6%;
 }
-.hideLogin:after,
-.hideLogin:before{
-	bottom: 100%;
-        border: solid transparent;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: absolute;
-        pointer-events: none;
-}
-.hideLogin:after {
-        border-color: rgba(255, 255, 255, 0);
-        border-bottom-color: #ffffff;
-        border-width: 19px;
-        left: 5%;
-        margin-left: -19px;
-}
 .hideLogin:before {
 	border-color: rgba(113, 158, 206, 0);
 	border-bottom-color: #719ECE;
@@ -157,7 +187,7 @@ nav ul li.right{
 	margin-left: -20px;
 }
 .cntLeft{
-	margin: 8% 2%;
+	margin: 2% 2%;
 	height: 300px;;
 }
 
@@ -168,7 +198,7 @@ nav ul li.right{
     font-weight: 700;
     min-width: 22%;
 }
-.form-inline .form-group {
+.form .form-group {
     display: block;
     margin-bottom: 5px;
     vertical-align: middle;
@@ -177,17 +207,117 @@ nav ul li.right{
     margin-left: 24%;
     width: 100px;
 }
+.txtImg figure{
+	text-align: center;
+}
 /**************Media Queries**************/
 /*Mobile both portrait & landspace*/
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 2) {
 
+
+@media only screen and (min-width : 320px) {
 	.divider{
 		display: none;
 	}
-  .mainContent .row .col-sm-3{
-	  text-align: center;
-  }
+	.showMobile{
+		display: block !important;
+	}
+	.collapse {
+		display: none;
+	}
+	.navbar-toggle {
+		display: block;
+	}
+}
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+	.divider{
+		display: none;
+	}
+	.showMobile{
+		display: block !important;
+	}
+	.collapse {
+		display: none;
+	}
+	.navbar-toggle {
+		display: block;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	.loginBtn{
+		display: none;
+	}
+	.showMobile{
+		display: block !important;
+	}
+
+	.col-md-5,.col-lg-5,col-sm-5{
+		width: 41.66666667%;
+	}
+	.col-md-1,.col-lg-1,col-sm-1 {
+		width: 8.33333333%;
+	}
+	.navbar-header {
+		min-width: 10%;
+	}
+	.navbar-toggle {
+		display: none;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	.loginBtn{
+		display: block;
+	}
+	 .showMobile{
+		display: none !important;
+	}
+	.row div{
+		float: left;
+	}
+	.col-md-5,.col-lg-5,col-sm-5{
+		width: 41.66666667%;
+	}
+	.col-md-1,.col-lg-1,col-sm-1 {
+		width: 8.33333333%;
+	}
+	.navbar-toggle {
+		display: none;
+	}
+	.showNav{
+		float: none;
+		background: transparent;
+	}
+		.navbar-header {
+		min-width: 20%;
+	}
+	.divider {
+    display: block;
+}
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	.divider {
+    display: block;
+}
+		.navbar-header {
+		min-width: 20%;
+	}
+	.loginBtn{
+		display: block;
+	}
+	.showMobile{
+		display: none !important;
+	}
+	.navbar-toggle {
+		display: none;
+	}
+	.showNav{
+		float: none;
+		background: transparent;
+	}
 }

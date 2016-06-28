@@ -1,4 +1,4 @@
-var apApp = angular.module('mainApp',['ui.bootstrap','slick','ui.router']);
+var apApp = angular.module('mainApp',['ui.bootstrap','slick','ui.router','ngAnimate']);
 apApp.config(function($stateProvider, $urlRouterProvider) {
   //$stateProvider & $urlRouterProvider should be injected in the same manner
   //don't forget to add angular-ui-router.js in your index file
